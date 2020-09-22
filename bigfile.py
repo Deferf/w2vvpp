@@ -78,7 +78,7 @@ class BigFile:
  
         for next in sorted_index[1:]:
             move = (next-1-previous) * offset
-            #print next, move
+            #print (next, move)
             fr.seek(move, 1)
             res.fromfile(fr, self.ndims)
             previous = next
@@ -144,12 +144,12 @@ if __name__ == '__main__':
 
 
     for name,vec in zip(renamed, vectors):
-        print name, vec
+        print (name, vec)
         
     bigfile = StreamFile(feat_dir)
     bigfile.open()
     for name, vec in bigfile:
-        print name, vec
+        print (name, vec)
     bigfile.close()
 
     
